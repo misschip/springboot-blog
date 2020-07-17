@@ -1,17 +1,17 @@
 # Spring Boot 프로젝트에 사용할 라이브러리
 
 ### Spring Starter Project 시작시 선택할 라이브러리
-Spring Web
-Spring Devtool
-Lombok
-MySql
-MyBatis
+ - Spring Web
+ - Spring Devtool
+ - Lombok
+ - MySql
+ - MyBatis
 
 ### MVNRepository에서 가져올 라이브러리
 ---------------------
-JSTL
-Tomcat-Embed-Jasper
-(둘다 xml에서 버전 부분은 삭제!!)
+ - JSTL
+ - Tomcat-Embed-Jasper
+ - (둘다 xml에서 버전 부분은 삭제!!)
 
 ---------------------
 # Table 생성
@@ -75,6 +75,6 @@ CREATE TABLE comment(
 ### (4) UserRepository.java 생성
 
 ### (5) TestController 생성 및 테스트
-/src/main/webapp/WEB-INF/views/
-	/src/main/webapp/ - tomcat embedded jasper가 인식하는 부분
-	/WEB-INF/views/ 는 prefix 부분
+ - /src/main/webapp/WEB-INF/views/
+ -	/src/main/webapp/ - tomcat embedded jasper가 인식하는 부분
+ -	/WEB-INF/views/ 는 prefix 부분
