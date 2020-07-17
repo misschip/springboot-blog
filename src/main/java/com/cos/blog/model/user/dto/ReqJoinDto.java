@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+/*
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,4 +23,7 @@ public class ReqJoinDto {
 	@Email(message = "이메일 양식이 틀렸습니다.")
 	@NotBlank(message = "이메일을 입력하세요.")
 	private String email;
+
 }
+
+*/
