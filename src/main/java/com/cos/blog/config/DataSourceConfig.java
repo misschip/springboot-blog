@@ -1,3 +1,4 @@
+/*
 package com.cos.blog.config;
 
 import javax.sql.DataSource;
@@ -15,3 +16,8 @@ public class DataSourceConfig {
     	return DataSourceBuilder.create().build();
 	}
 }
+
+
+없어도 된다고 해서 일단 주석 처리!!!!!!!!!!!!!!!!!
+
+*/

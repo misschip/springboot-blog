@@ -22,3 +22,4 @@ spring:
       
 file:
   path: C:/src/springbootWork/springboot-blog/media/
+  
