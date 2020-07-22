@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+// 스프링에는 ResponseEntity라는 클래스를 미리 만들어 놓아서 이걸 사용하는 게 원칙인데
+// 이걸 흉내내서 비슷하게 만들어 본 클래스임
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

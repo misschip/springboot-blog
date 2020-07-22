@@ -22,11 +22,16 @@ public class UserService {
 		// 아래 try -- catch 의 catch로  실행이 흘러도 ajax 쪽에는 done()으로 반환됨
 		// 나중에는 리턴값은 인터셉터로 처리하게 된다고 함
 		userRepository.save(user);
-								
+		
 	}
 	
 	@Transactional(readOnly = true)	// database isolation으로 구글 검색
 	public User 로그인(User user) {
+		// userService 객체는 아래에서 com.sun.proxy.$ProxyXX(XX은 두자리 임의의 숫자) 타입으로 출력됨
+		// JVM이 리플렉션 기법으로 실행타임에 UserRepository 인터페이스를 구현하는 객체를 만들어 내기 때문인 듯
+		// 이때 Proxy가 중요한 역할을 한다.
+		System.out.println("UserService: userRepository.getClass().getName() : " + userRepository.getClass().getName());
+		
 		return userRepository.login(user);
 	}
 }
