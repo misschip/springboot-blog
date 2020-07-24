@@ -21,6 +21,7 @@ public class UserService {
 	public void 회원가입(User user) {
 		// 아래 try -- catch 의 catch로  실행이 흘러도 ajax 쪽에는 done()으로 반환됨
 		// 나중에는 리턴값은 인터셉터로 처리하게 된다고 함
+		user.setRole("ROLE_USER");
 		userRepository.save(user);
 		
 	}
