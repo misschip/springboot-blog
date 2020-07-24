@@ -31,7 +31,7 @@ public class RoleInterceptor extends HandlerInterceptorAdapter{
 			}
 		}
 		
-		// System.out.println("인증과 권한을 체크해야 함");
+
 		return true;
 	}
 }

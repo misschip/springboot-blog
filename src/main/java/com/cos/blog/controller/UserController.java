@@ -50,9 +50,11 @@ public class UserController {
 		}
 	}
 	
+	/*
 	@RequestMapping("/auth/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "index";
 	}
+	*/
 }

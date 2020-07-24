@@ -1,7 +1,10 @@
 package com.cos.blog.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
@@ -21,5 +24,14 @@ public class IndexController {
 	@GetMapping("/auth/loginForm")
 	public String loginForm() {
 		return "user/loginForm";
+	}
+	
+	
+	@GetMapping("/auth/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+		// 위 한줄은 아래 코드와 동일
+		// return "index";
 	}
 }

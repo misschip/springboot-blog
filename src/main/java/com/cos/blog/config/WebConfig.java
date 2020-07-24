@@ -1,7 +1,5 @@
 package com.cos.blog.config;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -17,11 +15,14 @@ public class WebConfig implements WebMvcConfigurer {
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/user/**");
+		registry.addInterceptor(new SessionInterceptor())
+			.addPathPatterns("/user/**")
+			.addPathPatterns("/post/**")
+			.addPathPatterns("/post**");
 			
 		
-		
-		registry.addInterceptor(new RoleInterceptor()).addPathPatterns("/admin/**");
+		registry.addInterceptor(new RoleInterceptor())
+			.addPathPatterns("/admin/**");
 		
 
 	}

@@ -30,7 +30,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter{
 			return false; // 더이상 진입이 안됨. 로그인이 필요함
 		}
 		
-		// System.out.println("인증을 체크해야 함");
+		
 		return true;
 	}
 }
