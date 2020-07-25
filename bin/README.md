@@ -57,21 +57,6 @@ CREATE TABLE comment(
 ) engine=InnoDB default charset=utf8;
 ````
 
-### 송금, 입금 기능 테스트에 사용할 테이블과 데이터
-
-````sql
-create table account(
-	id int auto_increment primary key,
-    username varchar(20),
-    accountNumber varchar(30),
-    money int
-)engine=InnoDB default charset=utf8;
-
-
-insert into account(username, accountNumber, money) values('홍길동','01022223333',50000);
-insert into account(username, accountNumber, money) values('장보고','01099998888',100000);
-commit;
-````
 
 
 # 이후 단계

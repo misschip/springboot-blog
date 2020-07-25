@@ -7,7 +7,7 @@
  
 	<select id="findAll" resultType="com.cos.blog.model.Account">
 		select * from account
-	</select><!--  아래 샾 변수도 구조분할 할당 -->
+	</select><!--  아래 샾 변수도 구조분해 할당(destructuring assignment) -->
 	<update id="update">
 		update account set money = #{money} where accountNumber = #{accountNumber}
 	</update>
