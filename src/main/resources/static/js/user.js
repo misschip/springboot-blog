@@ -84,7 +84,7 @@ let index = {
 				// location.href = "/";
 				// console.log(JSON.parse(resp));
 			}).fail(function(error){	// ajax 통신 실패에 대한 처리
-				alert("회원가입 실패");		// db 구문 에러시에도 이쪽으로 오게 됨
+				alert("로그인 실패");		// db 구문 에러시에도 이쪽으로 오게 됨
 				console.log(error);
 			});
 			
