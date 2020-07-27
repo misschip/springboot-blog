@@ -11,7 +11,7 @@ public class IndexController {
 
 	@GetMapping({"/",""})
 	public String index() {
-		return "index";
+		return "redirect:/posts";
 	}
 	
 	// auth가 붙는 user 관련 주소 처리는 여기서!

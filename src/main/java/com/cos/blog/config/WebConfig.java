@@ -16,8 +16,8 @@ public class WebConfig implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new SessionInterceptor())
-			.addPathPatterns("/user/**")
-			.addPathPatterns("/post/**")
+			.addPathPatterns("/user/**")	// 열거한 주소로의 접근은 Controller로 가기 전에
+			.addPathPatterns("/post/**")	// SessionInterceptor가 낚아채서 우선 처리함
 			.addPathPatterns("/post**");
 			
 		

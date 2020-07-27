@@ -1,6 +1,7 @@
 package com.cos.blog.model;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,5 +20,5 @@ public class User {
 	private String profile;
 	private String role;
 	private Timestamp createDate;
-	
+		
 }

@@ -9,5 +9,27 @@
 		VALUES(#{title}, #{content}, #{userId}, now())
 	</insert>
 
+	<select id="findAll" resultType="com.cos.blog.model.Post">
+		SELECT * FROM post ORDER BY id DESC
+	</select>
 	
+	<select id="findById" resultType="com.cos.blog.controller.dto.PostDetailRespDto">
+		select p.id, p.title, p.content, u.username 
+			from post p inner join user u 
+			on p.userId = u.id 
+			where p.id = #{id}
+	</select>
+	
+	<select id="findOne" resultType="com.cos.blog.model.Post">
+		SELECT * FROM post WHERE id = #{id}
+	</select>
+	
+	<delete id="deleteById">
+		DELETE FROM post WHERE id = #{id}
+	</delete>
+	
+	<update id="update">
+		UPDATE post SET title = #{title}, content = #{content} 
+		WHERE id = #{id}
+	</update>
 </mapper>

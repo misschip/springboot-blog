@@ -13,11 +13,29 @@ let index = {
 			});
 			
 			
-			
 			$("#btn-update").on("click", () => {
 
 				this.update();	// 위 함수를 Arrow Function으로 바꿈으로써 this가 index 객체 가리키도록 됨
 			});
+			
+			
+			$("#btn-delete").on("click", () => {
+
+				this.deleteById();
+			});
+			
+			$("#btn-update-mode").on("click", () => {
+				// 콜백 스택
+				this.updateMode();
+			});
+			
+			
+			$("#btn-update").on("click", () => {
+				// 콜백 스택
+				this.update();
+			});
+			
+			$("#btn-update").hide();
 			
 		},
 
@@ -50,6 +68,77 @@ let index = {
 		},
 		
 		
+		deleteById: function() {
+			let data = {
+					id: $("#id").val()
+			};
+			
+			console.log("deleteById function : ");
+			console.log(JSON.stringify(data));
+			console.log(JSON.stringify(data.id));
+			
+			$.ajax({
+				type: "DELETE",
+				url: "/post/"+data.id,		
+				// data: JSON.stringify(data.id),
+
+				dataType: "json"	
+			}).done(function(resp){
+				alert("삭제 성공");
+				location.href="/";
+				console.log(resp);
+			}).fail(function(error){
+				alert("삭제 실패");
+				console.log(error);
+			});
+			
+		},
+		
+		
+		updateMode: function() {
+			console.log("javascript updateMode 함수 실행");
+			
+			$("#btn-update-mode").hide();
+			$("#btn-update").show();
+			
+			
+//			let element = $("#btn-update-mode");
+//			element.attr("class", "btn btn-primary");
+//			element.attr("id", "btn-update");
+//			element.text("수정하기");
+			
+			$("#title").attr("readOnly", false);
+			$("#content").attr("readOnly",false);
+		},
+		
+		
+		update: function() {
+			console.log("javascript update 함수 실행");
+			
+			let data = {
+					id: $("#id").val(),
+					title: $("#title").val(),
+					content: $("#content").val()
+			};
+			
+			$.ajax({
+				type: "PUT",
+				url: "/post/"+data.id,
+				data: JSON.stringify(data),
+				contentType: "application/json; charset=utf-8",
+				dataType: "json"
+				
+			}).done(function(resp){
+				
+				console.log(resp);
+				alert("수정 성공");
+				location.href="/post/" + data.id;
+			}).fail(function(error){
+				alert("");
+				console.log(error);
+			});
+			
+		},
 		
 	
 }
