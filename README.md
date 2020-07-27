@@ -58,6 +58,9 @@ CREATE TABLE comment(
 ) engine=InnoDB default charset=utf8;
 ````
 
+### 관리자 권한 갖는 사용자 만드는 법
+ - 블로그 상에서 회원가입한 후, MySQL Workbench 에서 아래 명령을 수행할 것 (사용자명 'admin2'인 경우)
+ - update user set role = 'ROLE_ADMIN' where username = 'admin2';
 
 
 # 이후 단계
