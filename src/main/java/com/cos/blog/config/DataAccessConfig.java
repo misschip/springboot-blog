@@ -16,7 +16,7 @@ public class DataAccessConfig {
 
     @Bean
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
-
+    	System.out.println("빈즈1");
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
 
         sessionFactory.setDataSource(dataSource);
@@ -27,6 +27,7 @@ public class DataAccessConfig {
 
     @Bean
     public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
+    	System.out.println("빈즈2");
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }

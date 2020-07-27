@@ -29,6 +29,8 @@ public class PostService {
 	
 	@Transactional(readOnly = true)
 	public List<Post> 목록보기() {
+		System.out.println("PostService : " + postRepository.getClass().getName());
+		System.out.println("PostService : " + this.getClass().getName());
 		return postRepository.findAll();
 	}
 	
