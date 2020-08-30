@@ -7,6 +7,7 @@ import com.cos.blog.model.User;
 public interface UserRepository {
 	public void save(User user);	// save(String username, String password, String email)로 해도 됨
 	public User login(User user);
+	public void update(User user);
 	
 	/*
 	public List<User> findAll();

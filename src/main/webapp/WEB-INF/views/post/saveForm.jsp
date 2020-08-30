@@ -10,12 +10,12 @@
      
      <div class="form-group">
        <label for="title">Title:</label>
-       <input id="title"  type="text" class="form-control" placeholder="Enter username" required>       
+       <input id="title"  type="text" class="form-control" placeholder="제목 입력" required>       
      </div>
      
      <div class="form-group">
        <label for="content">Content:</label>
-       <textarea id="content" rows="10" cols="50" class="form-control"></textarea>
+       <textarea id="content" rows="10" cols="50" class="form-control"  placeholder="내용 입력" required></textarea>
      </div>
 
      <button id="btn-save" type="button" class="btn btn-primary">글쓰기완료</button>

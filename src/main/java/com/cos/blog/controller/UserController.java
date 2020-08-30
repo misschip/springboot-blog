@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,6 +49,19 @@ public class UserController {
 			session.setAttribute("principal", persistUser);
 			return new CommonRespDto<String>(1,"로그인 결과 성공");
 		}
+	}
+	
+	
+	@GetMapping("/user/update")
+	public String updateUserInfo() {
+		return "/user/updateForm";
+	}
+	
+	
+	@PostMapping("/user/updateProc")
+	public @ResponseBody CommonRespDto<?> updateUserInfoProc(@RequestBody User user) {
+		userService.회원정보수정(user);
+		return new CommonRespDto<String>(1, "회원정보 수정 성공");
 	}
 	
 	/*

@@ -6,7 +6,7 @@
 <%@ include file="../layout/header.jsp"%>
 
 
-<h1>index 페이지입니다.</h1>
+<h1>COS 블로그</h1>
 
 
 
